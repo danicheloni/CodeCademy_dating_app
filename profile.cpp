@@ -17,11 +17,20 @@
         std::string bio = "Name:" + name;
         bio += "\nAge: " + std::to_string(age);
         bio += "\nPronouns: " + pronouns + "\n";
-                
-        return bio;
+        
+        std::string hobbies_string = "Hobbies: \n";
+        for (std::string hobby : hobbies)
+        {
+            hobbies_string += "  -" + hobby + "\n";
+        }
+        
+
+        return bio + hobbies_string;
     };
 
     std::vector<std::string> Profile::add_hobby(std::string new_hobby)
     {
         hobbies.push_back(new_hobby);
+
+        return hobbies;
     }
